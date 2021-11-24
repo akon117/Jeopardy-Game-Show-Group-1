@@ -1,26 +1,37 @@
 package application;
-
+	
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
 
+/**************************************************************
+ * CLASS: Main
+ * 
+ * Attributes:
+ *  - None
+ *  
+ * Use:
+ *  Launches JavaFX and loads the first Scene (MainMenu.fxml)
+ *
+ *************************************************************/
+
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("view/MainMenu.fxml"));
-			Scene scene = new Scene(root, 800, 800);
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("view/MainMenu.fxml"));
+			Scene scene = new Scene(root,1035,750);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setResizable(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();
-		} catch (Exception e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
